@@ -122,7 +122,7 @@ jobs:
 
 Another pipeline example:
 
-```
+```yml
 ---
 resource_types:
 - name: ansible
