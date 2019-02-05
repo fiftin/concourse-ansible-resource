@@ -24,6 +24,7 @@ RUN ln -s /lib /lib64 \
             ca-certificates \
             openssh-client \
             rsync \
+            git \
     && \
         apk --upgrade add --no-cache --virtual \
             build-dependencies \
