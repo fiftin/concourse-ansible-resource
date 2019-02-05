@@ -369,14 +369,11 @@ class AnsiblePlaybook(Resource):
         else:
             build_path = os.path.join(workfolder, "src")
 
-            git_ssh_identity_filename = os.path.join(workfolder, "id_rsa")
+            git_ssh_identity_filename = os.path.join(os.path.expanduser('~/.ssh/id_rsa'))
             git_ssh_identity_file = open(git_ssh_identity_filename, "w")
             git_ssh_identity_file.write(source.get("src_private_key"))
             git_ssh_identity_file.close()
-            git_ssh_cmd = 'ssh -i %s' % git_ssh_identity_filename
-            
-            with Git().custom_environment(GIT_SSH_COMMAND=git_ssh_cmd):
-                Repo.clone_from(source.get("src_uri"), build_path, branch=source.get("src_branch", "master"))
+            Repo.clone_from(source.get("src_uri"), build_path, branch=source.get("src_branch", "master"))
 
         # Extra vars (just a dictionary)
         extra_vars = config.get("extra_vars", {})
