@@ -3,18 +3,21 @@
 This is [Ansible](https://www.ansible.com) resource for [Concourse](http://concourse.ci)
 to be able to execute Ansible playbooks from concourse.
 
-This a pure Python implementation using the Ansible API. It does not use the binary commands
-and it defines an output plugin to send the ansible execution logs to stderr as it is 
+It defines an output plugin to send the ansible execution logs to stderr as it is 
 required by concourse (see `ansible/callbacks/concourse.py`).
 
 The ansible default configuration (in `/etc/ansible`) is defined in `ansible` folder.
 
+It can use Ansible playbook stored in git repository (`src_uri`).
 
 ## Source Configuration
 
 Parameters available to use in the resource definition. None of then are required, but
 probably you will need to setup `private_key`, `remote_user` and `inventory`:
 
+* `src_uri`: URI of git repo where Ansible playbook stored.
+* `src_branch`: Branch witch you want to use.
+* `src_private_key`: A string containing the ssh private key used to access to git repo.
 * `private_key`: A string containing the ssh private key used for ssh connections.
 * `remote_user`: Remote user used to establish a ssh connection.
 * `remote_pass` : If `private_key` is not provided, password for `remote_user`.
