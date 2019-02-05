@@ -10,6 +10,10 @@ The ansible default configuration (in `/etc/ansible`) is defined in `ansible` fo
 
 It can use Ansible playbook stored in git repository (`src_uri`).
 
+## Why using playbook from git better than from resource?
+
+![With Git Resource](https://user-images.githubusercontent.com/914224/52291781-00b15b80-2995-11e9-9b2b-f11a53dfde43.png)
+
 ## Source Configuration
 
 Parameters available to use in the resource definition. None of then are required, but
