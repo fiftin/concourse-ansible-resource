@@ -50,6 +50,7 @@ RUN apk del \
     && \
         rm -rf /var/cache/apk/*
 
+RUN mkdir -p ~/.ssh
 RUN echo $'Host *\nStrictHostKeyChecking no' > ~/.ssh/config
 RUN chmod 400 ~/.ssh/config
 
