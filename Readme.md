@@ -87,15 +87,12 @@ resource_types:
     repository: platformengineering/concourse-ansible-resource
 
 resources:
-- name: ansible-playbook
-  type: git
-  source:
-    uri: git@github.com:springerpe/repository.git
-    branch: master
-    private_key: {{github-private-key}}
 - name: ansible-executor
   type: ansible
   source:
+    src_uri: git@github.com:springerpe/repository.git
+    src_branch: master
+    src_private_key: {{github-private-key}}
     private_key: {{ansible-private-key}}
     remote_user: ansible
     inventory:
@@ -118,10 +115,8 @@ resources:
 jobs:
 - name: run-ansible
   plan:
-  - get: ansible-playbook
   - put: ansible-executor
     params:
-      src: "ansible-playbook"
       playbook: "site.yml"
 ```
 
