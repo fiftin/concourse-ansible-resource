@@ -50,6 +50,9 @@ RUN apk del \
     && \
         rm -rf /var/cache/apk/*
 
+RUN echo $'Host *\nStrictHostKeyChecking no' > ~/.ssh/config
+RUN chmod 400 ~/.ssh/config
+
 # Default config
 COPY ansible/ /etc/ansible/
 
