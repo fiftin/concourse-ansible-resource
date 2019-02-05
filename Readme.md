@@ -55,7 +55,7 @@ and `playbook` (only in `out`).
 
 #### Parameters
 
-* `src`: Base folder where all the ansible resources are (inventory, playbook, ...)
+* `src`: Base folder where all the ansible resources are (to use local playbook instead of git repo, see examples below)
 * `playbook`: Playbook file name to execute.
 * `remote_user`: Remote user used to establish a ssh connection.
 * `remote_pass` : If `private_key` is not provided, password for `remote_user`.
