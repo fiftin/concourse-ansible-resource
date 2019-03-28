@@ -1,4 +1,4 @@
-# Ansible [Concourse](http://concourse.ci) Resource
+# Ansible 2.8 [Concourse](http://concourse.ci) Resource
 
 This is [Ansible](https://www.ansible.com) resource for [Concourse](http://concourse.ci)
 to be able to execute Ansible playbooks from concourse.
@@ -27,6 +27,7 @@ probably you will need to setup `private_key`, `remote_user` and `inventory`:
 * `remote_pass` : If `private_key` is not provided, password for `remote_user`.
 * `vault_password`: Ansible vault password to access to encrypted files with variables.
 * `extra_vars`: Key-value dictionary with variables used in the playbooks.
+* `extra_vars_file`: Pathname of JSON file with extra variables. Not compatible with `extra_vars`.
 * `inventory`: Dictionary for inventory definition:
   * `file`: Defaults to `inventory.ini` file name for inventory. 
   * `path`: Folder where the hosts inventory file will be created (if needed) and additional inventory files can be defined: group_vars and host_vars are. Defaults to `inventory`.
