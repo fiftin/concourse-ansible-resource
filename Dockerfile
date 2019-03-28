@@ -38,8 +38,8 @@ RUN ln -s /lib /lib64 \
 # Ansible installation
 ADD requirements.txt /opt/
 RUN pip3 install --upgrade --no-cache-dir -r /opt/requirements.txt
-RUN git clone https://github.com/ansible/ansible /tmp/ansible
-RUN cd /tmp/ansible && python3 setup.py install
+#RUN git clone https://github.com/ansible/ansible /tmp/ansible
+#RUN cd /tmp/ansible && python3 setup.py install
 
 RUN apk del \
         build-dependencies \

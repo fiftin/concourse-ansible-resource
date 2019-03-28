@@ -1,4 +1,4 @@
-# Ansible 2.8 [Concourse](http://concourse.ci) Resource
+# Ansible [Concourse](http://concourse.ci) Resource
 
 This is [Ansible](https://www.ansible.com) resource for [Concourse](http://concourse.ci)
 to be able to execute Ansible playbooks from concourse.
