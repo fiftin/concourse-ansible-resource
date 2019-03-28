@@ -29,6 +29,7 @@ from resource import Resource
 
 # Future: from ansible.inventory.manager import InventoryManager
 # from ansible.executor.stats import AggregateStats
+
 from ansible.inventory import Inventory
 from ansible.parsing.dataloader import DataLoader
 from ansible.vars import VariableManager
