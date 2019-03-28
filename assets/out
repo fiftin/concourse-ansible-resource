@@ -192,6 +192,7 @@ class AnsiblePlaybook(Resource):
         "src": str,
         "playbook": str,
         "extra_vars": dict,
+        "extra_vars_file": str,
         "inventory": dict,
         "become": bool,
         "become_method": str,
@@ -379,9 +380,9 @@ class AnsiblePlaybook(Resource):
         # Extra vars (just a dictionary)
         extra_vars = config.get("extra_vars", {})
         extra_vars.update(source.get("extra_vars", {}))
+        extra_vars_filename = config.get("extra_vars_file")
 
-        if not extra_vars:
-            extra_vars_filename = config.get("extra_vars_file")
+        if not extra_vars and extra_vars_filename:
             extra_vars_file = open(os.path.join(workfolder, extra_vars_filename), "r")
             extra_vars = json.load(extra_vars_file)
 
